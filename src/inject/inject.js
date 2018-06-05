@@ -32,12 +32,12 @@ chrome.extension.sendMessage({}, function (response) {
 
 			/* instagram */
 			if (host === 'www.instagram.com' && onflo) {
-				document.querySelectorAll('._mck9w a')[0].click();
+				document.querySelectorAll('.v1Nh3 a')[0].click();
 				let automate = setInterval(function () {
-					const heart = () => document.querySelector('.coreSpriteHeartOpen');
-					const arrow = () => document.querySelector('.coreSpriteRightPaginationArrow');
-					if (heart()) heart().click();
-					else if (!heart() && arrow()) arrow().click();
+					const heart = () => document.querySelector('a.fr66n');
+					const arrow = () => document.querySelector('a.HBoOv');
+					if (heart() && heart().innerText === 'Like\n') heart().click();
+					else if (heart().innerText === 'Unlike\n' && arrow()) arrow().click();
 					else clearInterval(automate);
 				}, speed);
 			}
